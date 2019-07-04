@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.example.custom_ui_demo.view.CheckView
+        android:id="@+id/check_view"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center">
+        <Button
+            android:id="@+id/btn_check"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/check_view_check" />
+
+        <Button
+            android:id="@+id/btn_uncheck"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="@string/check_view_uncheck" />
+    </LinearLayout>
+</LinearLayout>

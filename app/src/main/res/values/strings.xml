@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">custom_ui_demo</string>
+
+    <!--demolist-->
+    <string name="pie_view">饼状图</string>
+    <string name="check_view">打勾图</string>
+
+    <string name="check_view_check">check</string>
+    <string name="check_view_uncheck">uncheck</string>
+
+    <string name="start_rate_label">开始比率</string>
+
+</resources>

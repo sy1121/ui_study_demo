@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_top_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/statusbar"
+        android:layout_width="match_parent"
+        android:layout_height="24dp" />
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:id="@+id/img_left"
+            style="@style/FrameworkTitleBarLeftIcon"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/img_back"
+            style="@style/FrameworkTitleBarLeftIcon"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/text_left"
+            style="@style/FrameworkBaseTitleBarText"
+            android:textSize="16sp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/text_title"
+            style="@style/FrameworkBaseTitleBarText"
+            android:layout_centerInParent="true"
+            android:textSize="16sp"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/img_right"
+            style="@style/FrameworkTitleBarRightIcon"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/text_right"
+            style="@style/FrameworkBaseTitleBarText"
+            android:textSize="16sp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/img_shadow"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"/>
+    </RelativeLayout>
+
+
+</LinearLayout>
