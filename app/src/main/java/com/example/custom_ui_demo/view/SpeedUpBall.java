@@ -4,9 +4,11 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.CornerPathEffect;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.PathEffect;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
@@ -74,6 +76,8 @@ public class SpeedUpBall extends View{
 
     private Handler mLogicHandler;
 
+    private PathEffect mPathEffect;
+
     private Handler mHandler=new Handler(Looper.getMainLooper()){
 
         @Override
@@ -126,6 +130,7 @@ public class SpeedUpBall extends View{
 
         maskMatrix = new Matrix();
 
+        mPathEffect = new CornerPathEffect(200);
         mState = STATE_STOP;
 
     }
@@ -228,9 +233,12 @@ public class SpeedUpBall extends View{
         curlPath.lineTo(lineWidth,backgroundHeight);
         curlPath.lineTo(0,backgroundHeight);
         curlPath.close();
+
         Paint paint= new Paint(Paint.ANTI_ALIAS_FLAG);
+        paint.setPathEffect(mPathEffect);
         paint.setStyle(Paint.Style.FILL);
         paint.setColor(getResources().getColor(R.color.shallowBlue));
+
         waveCanvas.drawPath(curlPath,paint);
         return waveBitmap;
     }
