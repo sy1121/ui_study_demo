@@ -12,6 +12,7 @@ import com.example.custom_ui_demo.base.activity.BaseActivity;
 import com.example.custom_ui_demo.base.template.BaseTemplate;
 import com.example.custom_ui_demo.base.template.impl.BackTitleTemplate;
 import com.example.custom_ui_demo.fragment.CheckViewFragment;
+import com.example.custom_ui_demo.fragment.PercentViewFragment;
 import com.example.custom_ui_demo.fragment.PieDataFragment;
 import com.example.custom_ui_demo.fragment.SpeedUpBallFragment;
 
@@ -20,8 +21,8 @@ import butterknife.BindView;
 public class MainActivity extends BaseActivity implements AdapterView.OnItemClickListener {
     private static final String TAG = "MainActivity";
 
-    private String[] mData = {"饼状图","打勾图","加速球"};
-    private Class[] mFragment = {PieDataFragment.class, CheckViewFragment.class, SpeedUpBallFragment.class};
+    private String[] mData = {"饼状图","打勾图","加速球","比例图"};
+    private Class[] mFragment = {PieDataFragment.class, CheckViewFragment.class, SpeedUpBallFragment.class, PercentViewFragment.class};
 
     @BindView(R.id.view_demo_list)
     ListView mListView;
