@@ -11,18 +11,27 @@ import com.example.custom_ui_demo.adapter.DemoListAdapter;
 import com.example.custom_ui_demo.base.activity.BaseActivity;
 import com.example.custom_ui_demo.base.template.BaseTemplate;
 import com.example.custom_ui_demo.base.template.impl.BackTitleTemplate;
+import com.example.custom_ui_demo.fragment.AudioRangeFragment;
 import com.example.custom_ui_demo.fragment.CheckViewFragment;
+import com.example.custom_ui_demo.fragment.ClockViewFragment;
+import com.example.custom_ui_demo.fragment.DrawViewFragment;
+import com.example.custom_ui_demo.fragment.DrawViewGroupFragment;
 import com.example.custom_ui_demo.fragment.PercentViewFragment;
 import com.example.custom_ui_demo.fragment.PieDataFragment;
 import com.example.custom_ui_demo.fragment.SpeedUpBallFragment;
+import com.example.custom_ui_demo.fragment.StickyLayoutFragment;
+import com.example.custom_ui_demo.view.StickyLayout;
 
 import butterknife.BindView;
 
 public class MainActivity extends BaseActivity implements AdapterView.OnItemClickListener {
     private static final String TAG = "MainActivity";
 
-    private String[] mData = {"饼状图","打勾图","加速球","比例图"};
-    private Class[] mFragment = {PieDataFragment.class, CheckViewFragment.class, SpeedUpBallFragment.class, PercentViewFragment.class};
+    private String[] mData = {"饼状图","打勾图","加速球","比例图","音频条","粘性布局","拖动图",
+    "侧边栏布局","时钟"};
+    private Class[] mFragment = {PieDataFragment.class, CheckViewFragment.class, SpeedUpBallFragment.class, PercentViewFragment.class, AudioRangeFragment.class,
+    StickyLayoutFragment .class, DrawViewFragment.class, DrawViewGroupFragment.class, ClockViewFragment.class
+};
 
     @BindView(R.id.view_demo_list)
     ListView mListView;

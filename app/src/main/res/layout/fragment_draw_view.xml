@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/draw_container"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:background="@color/colorPrimary">
+        <com.example.custom_ui_demo.view.DrawView
+            android:id="@+id/draw_view"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@color/colorBlue"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:text="Hello"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/scroll_by"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="scroll_by"/>
+        <Button
+            android:id="@+id/scroll_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="scroll_to"/>
+    </LinearLayout>
+</LinearLayout>

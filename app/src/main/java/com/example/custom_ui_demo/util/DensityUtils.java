@@ -1,7 +1,9 @@
 package com.example.custom_ui_demo.util;
 
 import android.content.Context;
+import android.util.DisplayMetrics;
 import android.util.TypedValue;
+import android.view.WindowManager;
 
 //常用单位转换的辅助类
 public class DensityUtils
@@ -61,6 +63,22 @@ public class DensityUtils
     public static float px2sp(Context context, float pxVal)
     {
         return (pxVal / context.getResources().getDisplayMetrics().scaledDensity);
+    }
+
+    public static int getWindowHeight(Context context){
+        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        DisplayMetrics dm = new DisplayMetrics();
+        wm.getDefaultDisplay().getMetrics(dm);
+        int height = dm.heightPixels;       // 屏幕高度（像素）
+        return height;
+    }
+
+    public static int getWindowWidth(Context context){
+        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        DisplayMetrics dm = new DisplayMetrics();
+        wm.getDefaultDisplay().getMetrics(dm);
+        int width = dm.widthPixels;         // 屏幕宽度（像素）
+        return width;
     }
 
 }
