@@ -9,5 +9,6 @@
     <string name="check_view_uncheck">uncheck</string>
 
     <string name="start_rate_label">开始比率</string>
+    <string name="finish_tips">100%</string>
 
 </resources>

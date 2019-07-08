@@ -16,11 +16,13 @@ import com.example.custom_ui_demo.fragment.CheckViewFragment;
 import com.example.custom_ui_demo.fragment.ClockViewFragment;
 import com.example.custom_ui_demo.fragment.DrawViewFragment;
 import com.example.custom_ui_demo.fragment.DrawViewGroupFragment;
+import com.example.custom_ui_demo.fragment.GuaGuaViewFragment;
+import com.example.custom_ui_demo.fragment.LeafProgressFragment;
 import com.example.custom_ui_demo.fragment.PercentViewFragment;
 import com.example.custom_ui_demo.fragment.PieDataFragment;
+import com.example.custom_ui_demo.fragment.RadarViewFragment;
 import com.example.custom_ui_demo.fragment.SpeedUpBallFragment;
 import com.example.custom_ui_demo.fragment.StickyLayoutFragment;
-import com.example.custom_ui_demo.view.StickyLayout;
 
 import butterknife.BindView;
 
@@ -28,9 +30,10 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
     private static final String TAG = "MainActivity";
 
     private String[] mData = {"饼状图","打勾图","加速球","比例图","音频条","粘性布局","拖动图",
-    "侧边栏布局","时钟"};
+    "侧边栏布局","时钟","刮刮卡","叶子进度条","清理加速雷达图"};
     private Class[] mFragment = {PieDataFragment.class, CheckViewFragment.class, SpeedUpBallFragment.class, PercentViewFragment.class, AudioRangeFragment.class,
-    StickyLayoutFragment .class, DrawViewFragment.class, DrawViewGroupFragment.class, ClockViewFragment.class
+    StickyLayoutFragment .class, DrawViewFragment.class, DrawViewGroupFragment.class, ClockViewFragment.class, GuaGuaViewFragment.class, LeafProgressFragment.class,
+            RadarViewFragment.class
 };
 
     @BindView(R.id.view_demo_list)
@@ -50,19 +53,17 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
 
     @Override
     protected void doOnCreate(Bundle savedInstanceState) {
-        Log.i(TAG,"doOnCreate ");
         initView();
     }
 
     private void initView(){
-        Log.i(TAG,"initView ");
         mAdapter = new DemoListAdapter(this,mData);
         mListView.setAdapter(mAdapter);
         mListView.setOnItemClickListener(this);
     }
 
+
     private void jumpToContent(String tag,String title){
-        Log.i(TAG,"jumpToContent tag = "+tag);
         Intent intent = new Intent(MainActivity.this,ContentActivity.class);
         intent.putExtra("fragment",tag);
         intent.putExtra("title",title);
@@ -72,7 +73,6 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Log.i(TAG,"onItemClick position = "+position);
         if(position > mFragment.length - 1) return;
         jumpToContent(mFragment[position].getCanonicalName(),mData[position]);
     }
